@@ -1,0 +1,7 @@
+{
+  "eslint.format.enable": true,
+  "eslint.ignoreUntitled": true,
+  "eslint.useESLintClass": true,
+  "eslint.useFlatConfig": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
