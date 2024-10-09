@@ -15,6 +15,10 @@ type Config = {
   AWS_REGION: string;
   AWS_ACCOUNT: string;
   NODE_ENV: string;
+
+  KEY_PEM: string;
+  CERTIFICATE_PEM: string;
+  CA_CHAIN: string;
 };
 
 export const config: Config = {
@@ -28,5 +32,8 @@ export const config: Config = {
   PASSKIT_TIER_ID: process.env.PASSKIT_TIER_ID ?? '',
   AWS_REGION: process.env.AWS_REGION ?? '',
   AWS_ACCOUNT: process.env.AWS_ACCOUNT ?? '',
-  NODE_ENV: process.env.NODE_ENV ?? '',
+  NODE_ENV: process.env.NODE_ENV ?? 'development',
+  KEY_PEM: process.env.KEY_PEM ?? '',
+  CERTIFICATE_PEM: process.env.CERTIFICATE_PEM ?? '',
+  CA_CHAIN: process.env.CA_CHAIN ?? '',
 };

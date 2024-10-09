@@ -1,13 +1,7 @@
 import 'reflect-metadata';
 
-import { QuickStartLoyalty } from './app/passkit/provider';
+import { app } from './server';
 
-console.log(QuickStartLoyalty);
-const provider = new QuickStartLoyalty();
-
-const run = async () => {
-  const resp = await provider.createSilverMember();
-  console.log(resp);
-};
-
-run();
+app.listen(3004, () => {
+  console.log('Server is listening on port 3000');
+});

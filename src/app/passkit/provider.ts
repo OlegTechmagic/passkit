@@ -4,14 +4,14 @@ import { Member } from 'passkit-node-sdk/io/member/member_pb';
 
 import PassKitGRPC from './client';
 
-export class QuickStartLoyalty {
+export class PasskitProvider {
   private pkClient;
 
   constructor() {
     this.pkClient = new PassKitGRPC().getInstance();
   }
 
-  createSilverMember() {
+  createMember() {
     console.log('Creating silver member');
 
     const member = new Member();
@@ -20,7 +20,10 @@ export class QuickStartLoyalty {
       .setDisplayname('Silver Steve')
       .setEmailaddress('keeperoleg26@gmail.com');
 
-    member.setTierid(config.TIER_ID).setProgramid(config.PROGRAM_ID).setPerson(person);
+    member
+      .setTierid(config.PASSKIT_TIER_ID)
+      .setProgramid(config.PASSKIT_PROGRAM_ID)
+      .setPerson(person);
 
     return new Promise((resolve, reject) => {
       this.pkClient.getMembershipClient().enrolMember(member, (err: any, response: any) => {

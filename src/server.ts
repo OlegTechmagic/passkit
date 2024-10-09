@@ -19,11 +19,11 @@ app.get('/', (req: Request, res: Response) => {
   res.json('Pong');
 });
 
-app.use(function clientErrorHandler(error: any, req: Request, res: Response, _: unknown) {
-  console.error(error);
-  return res
-    .status(error.statusCode ?? error.status ?? 500)
-    .json({ message: error.message, error });
-});
+// app.use((error: any, req: Request, res: Response, _: unknown) => {
+//   console.error(error);
+//   return res
+//     .status(error.statusCode ?? error.status ?? 500)
+//     .json({ message: error.message, error });
+// });
 
 export { app };
