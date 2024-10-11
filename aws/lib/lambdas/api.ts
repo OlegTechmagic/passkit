@@ -1,5 +1,4 @@
 import { Duration } from 'aws-cdk-lib';
-import { ILayerVersion } from 'aws-cdk-lib/aws-lambda';
 import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Construct } from 'constructs';
 
@@ -9,7 +8,7 @@ import { LambdaConstruct } from '../../helpers';
 export class ApiConstruct extends Construct {
   handler: NodejsFunction;
 
-  constructor(scope: Construct, id: string, layers?: ILayerVersion[]) {
+  constructor(scope: Construct, id: string) {
     super(scope, id);
 
     this.handler = LambdaConstruct(this, 'Passkit', {
@@ -17,7 +16,6 @@ export class ApiConstruct extends Construct {
       entry: 'handler',
       timeout: Duration.seconds(20),
       memorySize: 300,
-      layers,
     });
   }
 }
