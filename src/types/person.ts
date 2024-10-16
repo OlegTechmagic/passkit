@@ -1,12 +1,15 @@
 export type Person = {
-  name: string;
-  surname: string;
   email: string;
-  address1?: string;
-  address2?: string;
   phone: string;
   gender: number;
-  dob?: Date;
+  firstName: string;
+  middleName: string;
+  lastName: string;
+  jobTitle: string;
+  companyName: string;
+  link: string;
+  externalId: string;
+  image: string;
 };
 
 export type EnrollPerson = Person & { externalId: string };
