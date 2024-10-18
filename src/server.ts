@@ -1,6 +1,6 @@
 import '@config';
 
-import { PassController } from '@controllers';
+import { MemberController } from '@controllers';
 import cors from 'cors';
 import express, { type NextFunction, type Request, type Response } from 'express';
 import swaggerUi from 'swagger-ui-express';
@@ -13,7 +13,7 @@ app.use(express.json());
 
 const apiRouter = express.Router();
 
-apiRouter.use(new PassController().route);
+apiRouter.use(new MemberController().route);
 
 app.use('/api/v1', apiRouter);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));

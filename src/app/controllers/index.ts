@@ -1,1 +1,1 @@
-export * from './pass.controller';
+export * from './member.controller';

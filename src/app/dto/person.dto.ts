@@ -1,4 +1,4 @@
-import { IsEmail, IsNumber, IsPhoneNumber, IsString } from 'class-validator';
+import { IsEmail, IsNumber, IsOptional, IsPhoneNumber, IsString } from 'class-validator';
 
 export class PersonDto {
   @IsString()
@@ -29,4 +29,42 @@ export class PersonDto {
 export class EnrollPersonDto extends PersonDto {
   @IsString()
   externalId: string;
+}
+
+export class UpdatePersonDto {
+  @IsOptional()
+  @IsString()
+  @IsEmail()
+  email: string;
+  @IsOptional()
+  @IsString()
+  @IsPhoneNumber()
+  phone: string;
+  @IsOptional()
+  @IsNumber()
+  gender: number;
+  @IsOptional()
+  @IsString()
+  firstName: string;
+  @IsOptional()
+  @IsString()
+  middleName: string;
+  @IsOptional()
+  @IsString()
+  lastName: string;
+  @IsOptional()
+  @IsString()
+  jobTitle: string;
+  @IsOptional()
+  @IsString()
+  companyName: string;
+  @IsOptional()
+  @IsString()
+  link: string;
+  @IsOptional()
+  @IsString()
+  externalId: string;
+  @IsOptional()
+  @IsString()
+  image: string;
 }

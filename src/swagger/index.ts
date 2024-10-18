@@ -11,5 +11,11 @@ export default {
   },
   servers: [{ url: 'http://localhost:3004', description: 'Local server' }],
   components: { schemas },
+  tags: [
+    {
+      name: 'Member',
+      description: 'Operations related to member passes',
+    },
+  ],
   paths: { ...pass },
 };

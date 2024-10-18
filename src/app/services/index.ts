@@ -1,1 +1,1 @@
-export * from './pass';
+export * from './member';

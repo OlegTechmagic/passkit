@@ -9,8 +9,13 @@ export const enrollMember = (enrollMemberData: CreatePassDto) => {
     enrollMemberData.person,
   );
 };
-export const updateMember = (memberId: string, updateMemberData: PersonDto) => {
-  return passkit.updateMember(memberId, updateMemberData);
+export const updateMember = (
+  programId: string,
+  tierId: string,
+  memberId: string,
+  updateMemberData: PersonDto,
+) => {
+  return passkit.updateMember(programId, tierId, memberId, updateMemberData);
 };
 
 export const getList = (programId: string) => {
