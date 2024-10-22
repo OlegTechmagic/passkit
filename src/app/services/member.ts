@@ -18,8 +18,8 @@ export const updateMember = (
   return passkit.updateMember(programId, tierId, memberId, updateMemberData);
 };
 
-export const getList = (programId: string) => {
-  return passkit.listMembers(programId);
+export const getOneById = (memberId: string) => {
+  return passkit.listMembers(memberId);
 };
 export const deleteMember = (memberId: string) => {
   return passkit.deleteMember(memberId);

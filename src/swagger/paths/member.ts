@@ -66,9 +66,29 @@ export const pass = {
         required: true,
         content: {
           'application/json': {
-            schema: { $ref: '#/components/schemas/UpdatePersonDto' },
+            schema: { $ref: '#/components/schemas/PersonDto' },
           },
         },
+      },
+    },
+    get: {
+      tags: ['Member'],
+      summary: 'Get by member id',
+      parameters: [
+        {
+          name: 'memberId',
+          in: 'path',
+          required: true,
+          description: 'The ID of the member received while creating pass',
+          schema: { type: 'string' },
+        },
+      ],
+      responses: {
+        '200': {
+          description: 'Member record',
+          schema: { $ref: '#/components/schemas/CreatePassDto' },
+        },
+        '400': { description: 'Error' },
       },
     },
   },

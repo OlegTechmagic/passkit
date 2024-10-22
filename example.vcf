@@ -1,10 +1,22 @@
 BEGIN:VCARD
 VERSION:4.0
+N:${person.forename};${person.surname};;.Mr;
+FN:  ${person.forename}
+ORG:  ${person.suffix}
+TITLE: ${person.salutation}
+PHOTO;VALUE=uri: ${person.otherNames}
+TEL;TYPE=work,voice;VALUE=uri:${person.mobileNumber}
+EMAIL:${person.emailAddress}
+x-qq:21588891
+END:VCARD
+
+BEGIN:VCARD
+VERSION:4.0
 N:Gump;Forrest;;Mr.;
-FN:Forrest Gump
-ORG:Bubba Gump Shrimp Co.
-TITLE:Shrimp Man
-PHOTO;VALUE=uri:https://img.freepik.com/free-photo/portrait-smiley-woman_23-2148827181.jpg
+FN: ${person.otherNames[0]}
+ORG: ${person.otherNames.[0]}
+TITLE: ${person.otherNames.0}
+PHOTO;VALUE=uri: ${person.otherNames[0]}
 TEL;TYPE=work,voice;VALUE=uri:tel:+1-111-555-1212
 TEL;TYPE=home,voice;VALUE=uri:tel:+1-404-555-1212
 ADR;TYPE=WORK;PREF=1;LABEL="100 Waters Edge\nBaytown\, LA 30314\nUnited States of America":;;100 Waters Edge;Baytown;LA;30314;United States of America
