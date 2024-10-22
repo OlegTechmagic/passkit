@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "node  ./esbuild.config.mjs",
-    "dev": "nodemon --config ./nodemon.json"
+    "dev": "NODE_ENV=development nodemon --config ./nodemon.json"
   },
   "devDependencies": {
     "@eslint/js": "^9.10.0",
@@ -51,6 +51,7 @@
     "dotenv": "^16.4.5",
     "express": "^4.21.0",
     "google-protobuf": "^3.21.4",
+    "http-errors": "^2.0.0",
     "image-to-base64": "^2.2.0",
     "passkit-node-sdk": "^1.1.97",
     "reflect-metadata": "^0.2.2",

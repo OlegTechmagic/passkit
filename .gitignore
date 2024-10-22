@@ -4,6 +4,8 @@ node_modules
 *.d.ts
 .env
 .env.prod.example
+.env.production
+.env.development
 
 
 # CDK asset staging directory

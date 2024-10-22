@@ -11,7 +11,7 @@ export class ApiGateway extends Construct {
     super(scope, id);
 
     this.restApi = new RestApi(this, 'passkit', {
-      restApiName: `passkit`,
+      restApiName: `cymlead-passkit`,
       deployOptions: { stageName: config.NODE_ENV },
       binaryMediaTypes: ['*/*'],
     });

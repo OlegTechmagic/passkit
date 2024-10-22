@@ -8,7 +8,7 @@ export class AwsStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    const { handler } = new ApiConstruct(this, 'passkit-api');
+    const { handler } = new ApiConstruct(this, 'cymlead-passkit-api');
 
     new ApiGateway(this, 'Gateway', handler);
   }

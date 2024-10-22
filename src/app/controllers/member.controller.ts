@@ -1,9 +1,11 @@
-import { CreatePassDto, PersonDto, UpdatePersonDto } from '@dto';
-import { deleteMember, enrollMember, getList, updateMember } from '@services';
+import { CreatePassDto, PersonDto } from '@dto';
+import { deleteMember, enrollMember, getOneById, updateMember } from '@services';
 import { BaseController, Controller, Delete, Get, Patch, Post, ValidateBody } from '@utils';
 import { type Request } from 'express';
 
-@Controller('/member')
+import { checkApiKey } from '../middlewares';
+
+@Controller('/member', [checkApiKey])
 export class MemberController extends BaseController {
   @Post('/')
   @ValidateBody(CreatePassDto)
@@ -11,13 +13,13 @@ export class MemberController extends BaseController {
     return enrollMember(req.body);
   }
 
-  @Get('/')
-  async list(req: Request<unknown, unknown, unknown, { programId: string }>) {
-    return getList(req.query.programId);
+  @Get('/:memberId')
+  async get(req: Request<{ memberId: string }>) {
+    return getOneById(req.params.memberId);
   }
 
   @Patch('/:id')
-  @ValidateBody(UpdatePersonDto)
+  @ValidateBody(PersonDto)
   async update(
     req: Request<{ id: string }, unknown, PersonDto, { programId: string; tierId: string }>,
   ) {

@@ -21,9 +21,10 @@ app.get('/', (req: Request, res: Response) => {
   res.json('Pong');
 });
 
-app.use((err: Error, req: Request, res: Response, _: NextFunction) => {
+app.use((err: any, req: Request, res: Response, _: NextFunction) => {
+  console.log(err);
   console.error(err.stack);
-  res.status(500).json({
+  res.status(err.status || 500).json({
     message: err.message,
     ...(process.env.NODE_ENV === 'development' && { stack: err.stack }),
   });
