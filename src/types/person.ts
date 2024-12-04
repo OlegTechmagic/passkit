@@ -3,13 +3,15 @@ export type Person = {
   phone: string;
   gender: number;
   firstName: string;
-  middleName: string;
+  middleName?: string;
   lastName: string;
   jobTitle: string;
   companyName: string;
   link: string;
   externalId: string;
   image: string;
+  address?: string;
+  website?: string;
 };
 
 export type EnrollPerson = Person & { externalId: string };

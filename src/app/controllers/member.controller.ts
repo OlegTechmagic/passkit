@@ -9,7 +9,7 @@ import { checkApiKey } from '../middlewares';
 export class MemberController extends BaseController {
   @Post('/')
   @ValidateBody(CreatePassDto)
-  async getPass(req: Request<unknown, unknown, CreatePassDto>) {
+  async enroll(req: Request<unknown, unknown, CreatePassDto>) {
     return enrollMember(req.body);
   }
 

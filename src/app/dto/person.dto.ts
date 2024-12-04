@@ -1,4 +1,4 @@
-import { IsEmail, IsNumber, IsPhoneNumber, IsString } from 'class-validator';
+import { IsEmail, IsNumber, IsOptional, IsPhoneNumber, IsString } from 'class-validator';
 
 export class PersonDto {
   @IsString()
@@ -12,7 +12,8 @@ export class PersonDto {
   @IsString()
   firstName: string;
   @IsString()
-  middleName: string;
+  @IsOptional()
+  middleName?: string;
   @IsString()
   lastName: string;
   @IsString()
@@ -25,6 +26,12 @@ export class PersonDto {
   externalId: string;
   @IsString()
   image: string;
+  @IsString()
+  @IsOptional()
+  address?: string;
+  @IsString()
+  @IsOptional()
+  website?: string;
 }
 export class EnrollPersonDto extends PersonDto {
   @IsString()

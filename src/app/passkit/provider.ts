@@ -56,6 +56,7 @@ export class PasskitProvider {
       return this.pkClient
         .getMembershipClient()
         .getMemberRecordById(id, (err: any, response: any) => {
+          console.log(err);
           if (response) {
             return resolve(response.toObject());
           }

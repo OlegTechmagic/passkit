@@ -8,6 +8,9 @@ export const createPersonInstance = (member: any, person: PersonDto) => {
   metadataMap.set('companyName', person.companyName);
   metadataMap.set('image', person.image);
   metadataMap.set('link', person.link);
+  metadataMap.set('address', person.address ?? 'address');
+  metadataMap.set('website', person.website ?? 'website');
+
   return new Person()
     .setForename(person.firstName)
     .setGender(person.gender)
