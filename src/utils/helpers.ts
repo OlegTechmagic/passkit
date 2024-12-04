@@ -15,7 +15,7 @@ export const createPersonInstance = (member: any, person: PersonDto) => {
     .setForename(person.firstName)
     .setGender(person.gender)
     .setMobilenumber(person.phone)
-    .setDisplayname(person.firstName + ' ' + person.middleName + ' ' + person.lastName)
+    .setDisplayname(person.firstName + ' ' + (person.middleName ?? '') + ' ' + person.lastName)
     .setSurname(person.lastName)
     .setEmailaddress(person.email)
     .setExternalid(person.externalId)
